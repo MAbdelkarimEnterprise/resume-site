@@ -65,8 +65,8 @@ story.append(entry("Grand Valley State University <font name='Sans' color='#5560
 story += section("Experience")
 story.append(entry("Rowad Modern Engineering (RME) <font name='Sans' color='#55607A'>· Cairo, Egypt</font>", "Jun – Jul 2026",
     "AI Integration Intern, Strategy &amp; PMO", [
-    "Designed and shipped <b>RME Intelligence</b>, an internal AI operating system for a contractor with an "
-    "<b>EGP 6.4B</b> active portfolio, now live with <b>38 users across 5 construction projects</b>.",
+    "Designed and shipped <b>RME Intelligence</b>, an internal AI operating system for a major construction "
+    "contractor, now live with <b>38 users across 5 construction projects</b>.",
     "Built <b>13 domain modules</b> end to end in Next.js, TypeScript, Prisma and PostgreSQL, including BOQ, IPC, Tender, "
     "Specification, Variation, Claims &amp; Delay, Knowledge Graph, AI Assistant and Analytics.",
     "Engineered LLM extraction pipelines that turn bills of quantities, payment certificates, tenders and specifications into "

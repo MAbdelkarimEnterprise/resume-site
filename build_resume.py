@@ -70,7 +70,7 @@ story.append(entry("Rowad Modern Engineering (RME) <font name='Sans' color='#556
     "Built <b>13 domain modules</b> end to end in Next.js, TypeScript, Prisma and PostgreSQL, including BOQ, IPC, Tender, "
     "Specification, Variation, Claims &amp; Delay, Knowledge Graph, AI Assistant and Analytics.",
     "Engineered LLM extraction pipelines that turn bills of quantities, payment certificates, tenders and specifications into "
-    "structured, queryable data, cutting manual takeoff and certification review <b>from hours to minutes</b>.",
+    "structured, queryable data, cutting manual takeoff and certification review <b>from days to minutes</b>.",
     "Architected the document pipeline as a staged async workflow behind a provider-agnostic AI and OCR layer, with role-based "
     "access control, a Vitest suite, and a knowledge-graph retrieval layer for natural-language queries across the portfolio.",
     "Built the executive dashboard leadership uses for portfolio decisions: contract vs. certified position, pending IPC value, "

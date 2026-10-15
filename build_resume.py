@@ -54,7 +54,7 @@ story.append(Spacer(1, 2))
 story.append(Paragraph(
     "Grand Rapids, MI | Cairo, Egypt &nbsp;·&nbsp; mw.abdelkarim@gmail.com &nbsp;·&nbsp; +1 (779) 445-4980<br/>"
     "<link href='https://www.linkedin.com/in/mahmoud-abdelkarim-b443b4326'>linkedin.com/in/mahmoud-abdelkarim-b443b4326</link> &nbsp;·&nbsp; "
-    "<link href='https://prjct-resume.vercel.app'>prjct-resume.vercel.app</link>", contact))
+    "<link href='https://mabdelkarim.vercel.app'>mabdelkarim.vercel.app</link>", contact))
 
 story += section("Education")
 story.append(entry("Grand Valley State University <font name='Sans' color='#55607A'>· Allendale, MI</font>", "Expected 2028",

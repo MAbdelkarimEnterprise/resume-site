@@ -15,7 +15,7 @@
 <title>Mahmoud Abdelkarim</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@600&family=Jost:wght@300;400;500&display=swap">
 <style>
 /* Layout: Webild "Creative Portfolio" structure (floating pill nav, rounded card sections, scroll-filled statement, giant-name footer) on pearl, with a 21st.dev-style Silk shader in the hero card and a Higgsfield film card. Committed light look. */
 :root{
@@ -354,6 +354,12 @@ em{font-family:var(--display);font-style:italic}
 .foot-row nav.icons a{position:relative;width:42px;height:42px}
 .foot-row nav.icons a::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translate(-50%,4px);white-space:nowrap;font-size:.7rem;letter-spacing:.06em;background:var(--navy);color:var(--pearl);padding:5px 9px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
 .foot-row nav.icons a:hover::after,.foot-row nav.icons a:focus-visible::after{opacity:1;transform:translate(-50%,0)}
+
+.logo-tile{width:56px;height:56px;border-radius:15px;overflow:hidden;display:grid;place-items:center;flex:none;box-shadow:0 10px 22px -12px rgba(20,33,61,.55),0 0 0 1px rgba(20,33,61,.06)}
+.logo-tile img{width:100%;height:100%;object-fit:cover;display:block}
+.lt-finu{background:#fff}
+.lt-nyx{background:#000;color:#F0EDE8;font:600 .8rem/1 "Inter",system-ui,sans-serif;letter-spacing:.18em;padding-left:.18em}
+.lt-stealth{background:rgba(244,241,236,.1);color:#E7C6CC;box-shadow:0 0 0 1px rgba(244,241,236,.22)}
 </style>
 </head>
 <body>
@@ -475,34 +481,34 @@ em{font-family:var(--display);font-style:italic}
 
   <section class="work">
     <article class="card w-sm">
-      <span class="num">F</span>
+      <span class="logo-tile lt-finu"><img src="/logos/finu.png" alt="FINU logo" width="56" height="56"></span>
       <div class="meta"><span>Fintech · AI</span><span>Live</span></div>
       <h3>FINU</h3>
       <p>An AI money assistant: spending analysis, autopilot savings, and putting idle cash to work. Backed by $200K in Google Gemini credits.</p>
       <a href="https://meetfinu.com" target="_blank" rel="noopener">meetfinu.com ↗</a>
     </article>
     <article class="card w-sm">
-      <span class="num">F</span>
+      <span class="logo-tile"><img src="/logos/forge.png" alt="FORGE logo" width="56" height="56"></span>
       <div class="meta"><span>Health · AI</span><span>In development</span></div>
       <h3>FORGE</h3>
       <p>A training app built by an athlete: WHOOP recovery, strain and sleep data, lift logging, and an AI nutrition coach in one place.</p>
     </article>
     <article class="card w-sm">
-      <span class="num">N</span>
+      <span class="logo-tile lt-nyx" role="img" aria-label="NYX logo">NYX</span>
       <div class="meta"><span>Autonomous AI</span><span>Live</span></div>
       <h3>NYX</h3>
       <p>An autonomous AI product with tiered subscriptions, built on Netlify and Resend.</p>
       <a href="https://nyxsystem.online" target="_blank" rel="noopener">nyxsystem.online ↗</a>
     </article>
     <article class="card w-sm w-half">
-      <span class="num">R</span>
+      <span class="logo-tile"><img src="/logos/toned.png" alt="TONED logo" width="56" height="56"></span>
       <div class="meta"><span>SMEs · MENA</span><span>LLMs · Voice</span></div>
       <h3>AI receptionists</h3>
       <p>Booking, intake and follow-up automation for gyms, clinics and restaurants across Egypt and the MENA region.</p>
       <a href="https://toned-studios.netlify.app/" target="_blank" rel="noopener">TONED Studios ↗</a>
     </article>
     <article class="card w-sm w-half stealth">
-      <span class="num">S</span>
+      <span class="logo-tile lt-stealth" role="img" aria-label="Stealth"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span>
       <div class="meta"><span>Upcoming</span><span>Stealth</span></div>
       <h3>Stealth</h3>
       <p>Something new is in the works. More soon.</p>

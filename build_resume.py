@@ -54,28 +54,29 @@ story.append(Spacer(1, 2))
 story.append(Paragraph(
     "Grand Rapids, MI | Cairo, Egypt &nbsp;·&nbsp; mw.abdelkarim@gmail.com &nbsp;·&nbsp; +1 (779) 445-4980<br/>"
     "<link href='https://www.linkedin.com/in/mahmoud-abdelkarim-b443b4326'>linkedin.com/in/mahmoud-abdelkarim-b443b4326</link> &nbsp;·&nbsp; "
-    "<link href='https://www.mahmoudabdelkarim.com'>mahmoudabdelkarim.com</link>", contact))
+    "<link href='https://www.mahmoudabdelkarim.com'>mahmoudabdelkarim.com</link> &nbsp;·&nbsp; <link href='https://github.com/MAbdelkarimEnterprise'>github.com/MAbdelkarimEnterprise</link>", contact))
 
 story += section("Education")
 story.append(entry("Grand Valley State University <font name='Sans' color='#55607A'>· Allendale, MI</font>", "Expected 2028",
     "B.S. Artificial Intelligence, Minor in Business · GPA 3.8 · Honors College",
     ["NCAA Division II Swim &amp; Dive student-athlete: <b>2026 NCAA All-American</b> (7th, 100 back, 46.85) and "
-     "<b>2026 GLIAC Champion</b> (100 back), plus GLIAC relay titles in the 200 medley and 400 free."]))
+     "<b>2026 GLIAC Champion</b> (100 back), plus GLIAC relay titles in the 200 medley and 400 free.",
+     "Relevant coursework: Data Structures and Algorithms, Data Visualization, Applied Statistics."]))
 
 story += section("Experience")
 story.append(entry("Rowad Modern Engineering (RME) <font name='Sans' color='#55607A'>· Cairo, Egypt</font>", "Jun – Jul 2026",
     "AI Integration Intern, Strategy &amp; PMO", [
     "Designed and shipped <b>RME Intelligence</b>, an internal AI operating system for a major construction "
-    "contractor, now live with <b>38 users across 5 construction projects</b>.",
+    "contractor, with <b>38 users across 5 construction projects</b>.",
     "Built <b>13 domain modules</b> end to end in Next.js, TypeScript, Prisma and PostgreSQL, including BOQ, IPC, Tender, "
     "Specification, Variation, Claims &amp; Delay, Knowledge Graph, AI Assistant and Analytics.",
-    "Engineered LLM extraction pipelines that turn bills of quantities, payment certificates, tenders and specifications into "
+    "Built LLM extraction pipelines that turn bills of quantities, payment certificates, tenders and specifications into "
     "structured, queryable data, cutting manual takeoff and certification review <b>from days to minutes</b>.",
     "Architected the document pipeline as a staged async workflow behind a provider-agnostic AI and OCR layer, with role-based "
     "access control, a Vitest suite, and a knowledge-graph retrieval layer for natural-language queries across the portfolio.",
     "Built the executive dashboard leadership uses for portfolio decisions: contract vs. certified position, pending IPC value, "
     "claims exposure, forecast margin and automated risk flags.",
-    "Partnered with Flex Labs to map departmental processes and run stakeholder interviews, converting findings into scoped "
+    "Shadowed under Flex Labs to map departmental processes and run stakeholder interviews, converting findings into scoped "
     "product requirements; delivered PMO dashboards and board packs.",
 ]))
 story.append(entry("Emerge Capital <font name='Sans' color='#55607A'>· Dubai (Remote)</font>", "Exposure Program",
@@ -84,11 +85,11 @@ story.append(entry("Emerge Capital <font name='Sans' color='#55607A'>· Dubai (R
 ]))
 
 story += section("Startups")
-story.append(entry("Founder &amp; Engineer <font name='Sans' color='#55607A'>· Independent AI ventures</font>", "2024 – Present", None, [
+story.append(entry("Founder <font name='Sans' color='#55607A'>· Independent AI ventures</font>", "2024 – Present", None, [
     "<b>FINU</b>: AI money assistant for spending analysis, autopilot savings and putting idle cash to work; secured "
     "<b>$200K in Google Gemini credits</b>. Built the marketing and demo site on Next.js and Vercel.",
     "<b>FORGE</b> (in development): training app combining WHOOP recovery, strain and sleep data with lift logging and an AI nutrition coach.",
-    "<b>NYX</b> (nyxsystem.online): autonomous AI product with a tiered subscription model on a Netlify and Resend stack.",
+    "<b>NYX</b> (nyxsystem.online): autonomous AI operating system for founders, executives and high performers, with tiered subscriptions.",
     "<b>AI automation for SMEs</b>: designed and prototyped AI receptionists with LLMs and voice APIs, handling booking, intake "
     "and follow-up for gyms, clinics and restaurants across Egypt and the MENA region.",
 ]))
@@ -107,5 +108,5 @@ for k, v in [
 doc = SimpleDocTemplate("/home/claude/site/resume.pdf", pagesize=letter, leftMargin=0.6 * inch, rightMargin=0.6 * inch,
                         topMargin=0.5 * inch, bottomMargin=0.45 * inch,
                         title="Mahmoud El Walid Abdelkarim — Resume", author="Mahmoud El Walid Abdelkarim",
-                        subject="Resume", keywords="AI engineer, software engineering, LLM, RAG, Next.js, TypeScript, Python")
+                        subject="Resume", keywords="Artificial Intelligence, software, LLM, RAG, Next.js, TypeScript, Python")
 doc.build(story)

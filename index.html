@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Mahmoud Abdelkarim, Artificial Intelligence major with a minor in Business at Grand Valley State University. Built RME Intelligence; founder of FINU and FORGE. NCAA All-American swimmer.">
+<meta name="description" content="Mahmoud Abdelkarim, Artificial Intelligence major with a minor in Business at Grand Valley State University. Built RME Intelligence; founder of FORGE and NYX. NCAA All-American swimmer.">
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:title" content="Mahmoud Abdelkarim">
-<meta property="og:description" content="Mahmoud Abdelkarim, Artificial Intelligence major with a minor in Business at Grand Valley State University. Built RME Intelligence; founder of FINU and FORGE. NCAA All-American swimmer.">
+<meta property="og:description" content="Mahmoud Abdelkarim, Artificial Intelligence major with a minor in Business at Grand Valley State University. Built RME Intelligence; founder of FORGE and NYX. NCAA All-American swimmer.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="https://www.mahmoudabdelkarim.com/og.png">
@@ -474,6 +474,9 @@ body{background:transparent}
 @media (max-width:640px){.tl li{grid-template-columns:1fr}.tl .when{order:-1}}
 
 @media (prefers-reduced-motion:reduce){.rme-ripple{display:none}}
+.w-sm p.desc{font-family:"Inter",system-ui,sans-serif;font-style:normal;font-size:.95rem;line-height:1.55}
+.b-nyx p.desc{color:#B9BED0}
+.b-forge p.desc{color:#C9BFB4;position:relative;z-index:2}
 </style>
 </head>
 <body>
@@ -555,7 +558,7 @@ body{background:transparent}
   </section>
 
   <div class="card figures" aria-label="Key figures">
-    <div class="fig"><b>Days → Min</b><span>Document review time, cut by AI extraction</span></div>
+    <div class="fig"><b>15–40 s</b><span>Per payment certificate, replacing manual re-keying</span></div>
     <div class="fig"><b>13</b><span>Domain modules built end to end</span></div>
     <div class="fig"><b>38</b><span>Users in production</span></div>
     <div class="fig"><b>5</b><span>Live construction projects</span></div>
@@ -570,63 +573,66 @@ body{background:transparent}
   <section class="work">
     <article class="card w-rme">
       <div class="copy">
-        <div class="meta"><span>RME · Cairo</span><span>Jun – Jul 2026</span><span>Next.js · TypeScript · Prisma</span></div>
+        <div class="meta"><span>RME · Cairo</span><span>Jun – Jul 2026</span><span>Next.js · TypeScript · Supabase · Claude</span></div>
         <h3>RME Intelligence</h3>
         <p>An AI operating system for one of Egypt’s major construction contractors. It reads the documents construction runs on, from bills of quantities and payment certificates to tenders and specifications, and turns them into structured data. Leadership gets one view of the money: contract versus certified, pending IPC value, claims exposure, forecast margin and automated risk flags.</p>
+        <p>I also ran it like a program: discovery interviews with engineers and quantity surveyors, a 9-dimension platform audit that logged 14 risks and set the fix order, and 10 KPIs drafted for the Tech Strategy team.</p>
       </div>
       <div class="arch" aria-label="Architecture">
-        <div class="stage"><span class="n">i.</span><div><strong>Ingest</strong><span>Staged async document workflow</span></div></div>
-        <div class="stage"><span class="n">ii.</span><div><strong>Extract</strong><span>LLM pipelines behind a provider-agnostic AI and OCR layer</span></div></div>
-        <div class="stage"><span class="n">iii.</span><div><strong>Structure</strong><span>Queryable data, knowledge graph and retrieval layer</span></div></div>
-        <div class="stage"><span class="n">iv.</span><div><strong>Decide</strong><span>Executive dashboard and natural-language assistant, role-based access, Vitest suite</span></div></div>
+        <div class="stage"><span class="n">i.</span><div><strong>Ingest</strong><span>Upload, parse and chunk bilingual Arabic/English documents</span></div></div>
+        <div class="stage"><span class="n">ii.</span><div><strong>Extract</strong><span>Claude structured-JSON extraction, checked by a validation engine</span></div></div>
+        <div class="stage"><span class="n">iii.</span><div><strong>Structure</strong><span>pgvector search, a BOQ revision-diff engine and a knowledge graph</span></div></div>
+        <div class="stage"><span class="n">iv.</span><div><strong>Decide</strong><span>Executive dashboard and an assistant that answers with page citations</span></div></div>
       </div>
       <div class="mods"><b>13 modules</b>BOQ<i>·</i>IPC<i>·</i>Tender<i>·</i>Specification<i>·</i>Document Intelligence<i>·</i>Quantity Surveying<i>·</i>Variation<i>·</i>Claims &amp; Delay<i>·</i>Technical Office<i>·</i>Workflow<i>·</i>Knowledge Graph<i>·</i>AI Assistant<i>·</i>Analytics</div>
     </article>
-    <article class="card w-row solo">
-      <div class="copy">
-        <div class="meta"><span>Emerge Capital</span><span>Dubai · Remote</span><span>Exposure program</span></div>
-        <h3>Venture Builder</h3>
-        <p>Supported market research, pitch content and product ideation for portfolio ventures across AI and Web3, with a front-row view of how early-stage companies get built and funded.</p>
-      </div>
+    <article class="card w-sm w-half">
+      <div class="meta"><span>Emerge Capital</span><span>Dubai · Remote</span><span>Exposure program</span></div>
+      <h3>Venture Builder</h3>
+      <p>Supported market research, pitch content and product ideation for portfolio ventures across AI and Web3, with a front-row view of how early-stage companies get built and funded.</p>
+      <a href="https://www.emergefy.com/" target="_blank" rel="noopener">emergefy.com ↗</a>
+    </article>
+    <article class="card w-sm w-half b-finu">
+      <canvas class="bg-fx finu-fx" data-finu aria-hidden="true"></canvas>
+      <span class="logo-tile lt-finu"><img src="/logos/finu.png" alt="FINU logo" width="56" height="56"></span>
+      <div class="meta"><span>Fintech · AI</span><span>Emerge Capital</span></div>
+      <h3>FINU</h3>
+      <p>An AI money assistant for spending analysis, autopilot savings, stablecoin payments, transfers and P2P. Backed by $200K in Google Gemini credits.</p>
+      <p>I built its marketing and demo site in 6 days: about 8,700 lines of Next.js, React and TypeScript with a custom WebGL shader.</p>
+      <a href="https://meetfinu.com" target="_blank" rel="noopener">meetfinu.com ↗</a>
     </article>
   </section>
 
   <div class="sh" id="startups">
     <span class="tag"><i></i>Startups</span>
     <h2>What I’m <em>building.</em></h2>
-    <p>Products I founded and run, from live to still under wraps.</p>
+    <p>Products I founded and build, from live to still under wraps.</p>
   </div>
 
   <section class="work">
-    <article class="card w-sm b-finu">
-      <canvas class="bg-fx finu-fx" data-finu aria-hidden="true"></canvas>
-      <span class="logo-tile lt-finu"><img src="/logos/finu.png" alt="FINU logo" width="56" height="56"></span>
-      <div class="meta"><span>Fintech · AI</span><span>Live</span></div>
-      <h3>FINU</h3>
-      <p>An AI money assistant: spending analysis, autopilot savings, and putting idle cash to work.</p>
-      <a href="https://meetfinu.com" target="_blank" rel="noopener">meetfinu.com ↗</a>
-    </article>
-    <article class="card w-sm b-forge">
+    <article class="card w-sm w-half b-forge">
       <span class="logo-tile"><img src="/logos/forge.png" alt="FORGE logo" width="56" height="56"></span>
       <div class="meta"><span>Health · AI</span><span>In development</span></div>
       <h3>FORGE</h3>
       <p class="f1">Shaped by the work</p>
       <p class="f2">By athletes for athletes</p>
+      <p class="desc">A training app that turns a photo of a practice sheet or lift log into saved sessions, with WHOOP sync and an AI coach. 34,000 lines in 6 weeks, 303 automated tests.</p>
     </article>
-    <article class="card w-sm b-nyx">
+    <article class="card w-sm w-half b-nyx">
       <svg class="nyx-crest" viewBox="0 0 800 800" aria-hidden="true" focusable="false"><defs><path id="nyxCirc" d="M 400,400 m -322,0 a 322,322 0 1,1 644,0 a 322,322 0 1,1 -644,0"/></defs><g class="nyx-rot-cw"><line x1="748.0" y1="400.0" x2="772.0" y2="400.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="754.6" y1="431.0" x2="770.6" y2="432.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="750.6" y1="461.8" x2="766.3" y2="464.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="743.9" y1="492.1" x2="759.3" y2="496.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="734.5" y1="521.8" x2="749.6" y2="527.2" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="722.6" y1="550.5" x2="737.1" y2="557.2" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="701.4" y1="574.0" x2="722.2" y2="586.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="691.6" y1="604.2" x2="704.7" y2="613.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="672.7" y1="628.8" x2="685.0" y2="639.1" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="651.7" y1="651.7" x2="663.0" y2="663.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="628.8" y1="672.7" x2="639.1" y2="685.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="604.2" y1="691.6" x2="613.4" y2="704.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="574.0" y1="701.4" x2="586.0" y2="722.2" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="550.5" y1="722.6" x2="557.2" y2="737.1" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="521.8" y1="734.5" x2="527.2" y2="749.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="492.1" y1="743.9" x2="496.3" y2="759.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="461.8" y1="750.6" x2="464.6" y2="766.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="431.0" y1="754.6" x2="432.4" y2="770.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="400.0" y1="748.0" x2="400.0" y2="772.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="369.0" y1="754.6" x2="367.6" y2="770.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="338.2" y1="750.6" x2="335.4" y2="766.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="307.9" y1="743.9" x2="303.7" y2="759.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="278.2" y1="734.5" x2="272.8" y2="749.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="249.5" y1="722.6" x2="242.8" y2="737.1" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="226.0" y1="701.4" x2="214.0" y2="722.2" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="195.8" y1="691.6" x2="186.6" y2="704.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="171.2" y1="672.7" x2="160.9" y2="685.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="148.3" y1="651.7" x2="137.0" y2="663.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="127.3" y1="628.8" x2="115.0" y2="639.1" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="108.4" y1="604.2" x2="95.3" y2="613.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="98.6" y1="574.0" x2="77.8" y2="586.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="77.4" y1="550.5" x2="62.9" y2="557.2" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="65.5" y1="521.8" x2="50.4" y2="527.2" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="56.1" y1="492.1" x2="40.7" y2="496.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="49.4" y1="461.8" x2="33.7" y2="464.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="45.4" y1="431.0" x2="29.4" y2="432.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="52.0" y1="400.0" x2="28.0" y2="400.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="45.4" y1="369.0" x2="29.4" y2="367.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="49.4" y1="338.2" x2="33.7" y2="335.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="56.1" y1="307.9" x2="40.7" y2="303.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="65.5" y1="278.2" x2="50.4" y2="272.8" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="77.4" y1="249.5" x2="62.9" y2="242.8" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="98.6" y1="226.0" x2="77.8" y2="214.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="108.4" y1="195.8" x2="95.3" y2="186.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="127.3" y1="171.2" x2="115.0" y2="160.9" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="148.3" y1="148.3" x2="137.0" y2="137.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="171.2" y1="127.3" x2="160.9" y2="115.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="195.8" y1="108.4" x2="186.6" y2="95.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="226.0" y1="98.6" x2="214.0" y2="77.8" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="249.5" y1="77.4" x2="242.8" y2="62.9" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="278.2" y1="65.5" x2="272.8" y2="50.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="307.9" y1="56.1" x2="303.7" y2="40.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="338.2" y1="49.4" x2="335.4" y2="33.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="369.0" y1="45.4" x2="367.6" y2="29.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="400.0" y1="52.0" x2="400.0" y2="28.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="431.0" y1="45.4" x2="432.4" y2="29.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="461.8" y1="49.4" x2="464.6" y2="33.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="492.1" y1="56.1" x2="496.3" y2="40.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="521.8" y1="65.5" x2="527.2" y2="50.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="550.5" y1="77.4" x2="557.2" y2="62.9" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="574.0" y1="98.6" x2="586.0" y2="77.8" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="604.2" y1="108.4" x2="613.4" y2="95.3" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="628.8" y1="127.3" x2="639.1" y2="115.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="651.7" y1="148.3" x2="663.0" y2="137.0" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="672.7" y1="171.2" x2="685.0" y2="160.9" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="691.6" y1="195.8" x2="704.7" y2="186.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="701.4" y1="226.0" x2="722.2" y2="214.0" stroke="rgba(30,91,255,0.55)" stroke-width="1.4"/><line x1="722.6" y1="249.5" x2="737.1" y2="242.8" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="734.5" y1="278.2" x2="749.6" y2="272.8" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="743.9" y1="307.9" x2="759.3" y2="303.7" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="750.6" y1="338.2" x2="766.3" y2="335.4" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><line x1="754.6" y1="369.0" x2="770.6" y2="367.6" stroke="rgba(30,91,255,0.28)" stroke-width="0.8"/><circle cx="400" cy="400" r="372" fill="none" stroke="rgba(30,91,255,0.18)" stroke-width="0.8"/></g><g class="nyx-rot-ccw"><text font-family="Inter,sans-serif" font-size="13" letter-spacing="6" fill="rgba(30,91,255,0.5)"><textPath href="#nyxCirc" startOffset="0%">AUTONOMOUS · INTELLIGENCE · SYSTEM · NYX · MMXXVI · WHAT OPERATES IN THE DARK · </textPath></text></g><circle cx="400" cy="400" r="300" fill="none" stroke="rgba(30,91,255,0.13)" stroke-width="0.8"/><circle cx="400" cy="400" r="238" fill="none" stroke="rgba(30,91,255,0.22)" stroke-width="0.8" stroke-dasharray="2 7"/><line x1="400" y1="200" x2="400" y2="162" stroke="rgba(30,91,255,0.4)" stroke-width="1"/><line x1="600" y1="400" x2="638" y2="400" stroke="rgba(30,91,255,0.4)" stroke-width="1"/><line x1="400" y1="600" x2="400" y2="638" stroke="rgba(30,91,255,0.4)" stroke-width="1"/><line x1="200" y1="400" x2="162" y2="400" stroke="rgba(30,91,255,0.4)" stroke-width="1"/><g class="nyx-rot-cw-slow"><line x1="400" y1="400" x2="400.0" y2="260.0" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="400.0" cy="260.0" r="3.2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="484.9" y2="315.1" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="484.9" cy="315.1" r="2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="540.0" y2="400.0" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="540.0" cy="400.0" r="3.2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="484.9" y2="484.9" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="484.9" cy="484.9" r="2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="400.0" y2="540.0" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="400.0" cy="540.0" r="3.2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="315.1" y2="484.9" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="315.1" cy="484.9" r="2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="260.0" y2="400.0" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="260.0" cy="400.0" r="3.2" fill="rgba(30,91,255,0.7)"/><line x1="400" y1="400" x2="315.1" y2="315.1" stroke="rgba(30,91,255,0.32)" stroke-width="0.9"/><circle cx="315.1" cy="315.1" r="2" fill="rgba(30,91,255,0.7)"/><path d="M400.0,260.0 L484.9,315.1 L540.0,400.0 L484.9,484.9 L400.0,540.0 L315.1,484.9 L260.0,400.0 L315.1,315.1 Z" fill="none" stroke="rgba(30,91,255,0.18)" stroke-width="0.8"/></g><circle cx="400" cy="400" r="64" fill="none" stroke="rgba(30,91,255,0.3)" stroke-width="0.8"/><circle cx="400" cy="400" r="2.4" fill="rgba(30,91,255,0.85)"/></svg>
       <span class="logo-tile lt-nyx" role="img" aria-label="NYX logo"><span>NYX</span></span>
       <div class="meta"><span>Autonomous AI</span><span>Live</span></div>
       <h3>NYX</h3>
       <p>The Operating System Behind Elite Performance</p>
+      <p class="desc">One orchestrator agent directs five specialist agents through a streaming workflow engine, with 54 API routes and scheduled briefings. Audit health score raised from 71 to 100.</p>
       <a href="https://nyxsystem.online" target="_blank" rel="noopener">nyxsystem.online ↗</a>
     </article>
     <article class="card w-sm w-half b-toned">
       <div class="bg-fx toned-fx" data-mesh aria-hidden="true"></div>
       <span class="logo-tile"><img src="/logos/toned.png" alt="TONED logo" width="56" height="56"></span>
-      <div class="meta"><span>SMEs · MENA</span><span>LLMs · Voice</span></div>
-      <h3>AI receptionists</h3>
-      <p>Booking, intake and follow-up automation for gyms, clinics and restaurants across Egypt and the MENA region.</p>
+      <div class="meta"><span>Wellness · Egypt</span><span>Platform</span></div>
+      <h3>TONED</h3>
+      <p>The operating platform for Egypt’s first hot pilates studio: member app, staff admin, card and wallet payments, and an AI concierge that answers from live schedules. Built the import for 1,469 legacy client records.</p>
       <a href="https://toned-studios.netlify.app/" target="_blank" rel="noopener">TONED Studios ↗</a>
     </article>
     <article class="card w-sm w-half stealth">
@@ -645,10 +651,22 @@ body{background:transparent}
 
   <section class="card exp">
     <ol class="tl">
-      <li><div><h3>AI Integration Intern, Strategy &amp; PMO</h3><p class="sub"><em>Rowad Modern Engineering</em> · Cairo</p><p class="note">Shadowed under Flex Labs on RME’s consultancy engagement and delivered Strategy &amp; PMO reporting, including portfolio dashboards and board packs.</p></div><span class="when">Jun – Jul 2026</span></li>
-      <li><div><h3>Founder</h3><p class="sub"><em>Independent AI products &amp; consulting</em> · Egypt and MENA</p></div><span class="when">2024 – Present</span></li>
-      <li><div><h3>Venture Builder</h3><p class="sub"><em>Emerge Capital</em> · Dubai, remote</p></div><span class="when">Exposure program</span></li>
+      <li><div><h3>AI Integration Intern, Strategy &amp; PMO</h3><p class="sub"><em>Rowad Modern Engineering</em> · Cairo</p><p class="note">Led RME Intelligence from discovery to launch: 13 modules, 38 users across 5 projects. Shadowed under Flex Labs on RME’s consultancy engagement and delivered Strategy &amp; PMO reporting, including portfolio dashboards and board packs.</p></div><span class="when">Jun – Jul 2026</span></li>
+      <li><div><h3>Founder</h3><p class="sub"><em>Independent AI products &amp; consulting</em> · Egypt and MENA</p><p class="note">NYX, a multi-agent AI system. FORGE, a training app for athletes. TONED, a studio operating platform. Plus AI receptionist prototypes for gyms, clinics and restaurants.</p></div><span class="when">2024 – Present</span></li>
+      <li><div><h3>Venture Builder</h3><p class="sub"><em><a href="https://www.emergefy.com/" target="_blank" rel="noopener">Emerge Capital</a></em> · Dubai, remote</p><p class="note">Market research and pitch content for AI and Web3 ventures, and FINU’s marketing site.</p></div><span class="when">Exposure program</span></li>
     </ol>
+  </section>
+
+  <div class="sh" id="build">
+    <span class="tag"><i></i>How I build</span>
+    <h2>Two kinds of <em>systems.</em></h2>
+    <p>Web apps and data pipelines take different muscles. I build both, with AI agents doing much of the typing and me doing the architecture.</p>
+  </div>
+
+  <section class="card kit">
+    <div><h4>Web apps</h4><p>NYX: multi-agent orchestration with streaming, per-step token and latency logs. FORGE: an installable app with row-level security on every table. TONED: mobile app, admin panel and payment webhooks.</p></div>
+    <div><h4>Data pipelines</h4><p>RME: certificate PDF → structured JSON → validation → Oracle Unifier template, plus a BOQ revision diff and pgvector search with citations. FORGE: photo → background job → schema-checked extraction → athlete confirms.</p></div>
+    <div><h4>Agentic workflow</h4><p>Claude Code and OpenAI Codex, driven by written specs in each repo (CLAUDE.md, AGENTS.md), MCP servers, and tests and evals that check the agents’ output.</p></div>
   </section>
 
   <div class="sh" id="toolkit">
@@ -657,11 +675,11 @@ body{background:transparent}
   </div>
 
   <section class="card kit">
-    <div><h4>AI &amp; ML</h4><p>LLM integration, RAG and retrieval, document extraction, agentic workflows, knowledge graphs, prompt engineering, OpenAI and Anthropic APIs</p></div>
+    <div><h4>AI &amp; ML</h4><p>Multi-agent orchestration, tool calling, structured outputs, RAG and pgvector search, document extraction, evals, Claude and OpenAI APIs</p></div>
     <div><h4>Languages</h4><p>Python, TypeScript, JavaScript, SQL</p></div>
-    <div><h4>Full-stack</h4><p>Next.js, React, Tailwind CSS, Prisma, PostgreSQL, REST APIs, Vitest, Git</p></div>
-    <div><h4>Infrastructure</h4><p>Vercel, Netlify, Docker, AWS, GCP</p></div>
-    <div><h4>Product</h4><p>Requirements, process mapping, PMO reporting, market research, financial modeling</p></div>
+    <div><h4>Full-stack</h4><p>Next.js, React, React Native, Tailwind CSS, Supabase (Postgres), REST APIs, Vitest, Playwright, Git</p></div>
+    <div><h4>Infrastructure</h4><p>Vercel, Netlify, Supabase Edge Functions, GitHub Actions, Upstash Redis</p></div>
+    <div><h4>Product</h4><p>Requirements and discovery interviews, risk logs, KPI design, PMO reporting, market research, financial modeling</p></div>
     <div><h4>Spoken</h4><p>Arabic, native. English, fluent.</p></div>
   </section>
 
@@ -743,9 +761,9 @@ body{background:transparent}
     <aside class="card c-side">
       <h3>Currently <em>looking</em></h3>
       <dl>
-        <div><dt>Seeking</dt><dd>Summer 2027 software engineering and AI internships</dd></div>
+        <div><dt>Seeking</dt><dd>Summer 2027 internships in technical program management, product and AI</dd></div>
         <div><dt>Studying</dt><dd>B.S. Artificial Intelligence, Minor in Business</dd></div>
-        <div><dt>Coursework</dt><dd>Data Structures and Algorithms, Data Visualization, Applied Statistics</dd></div>
+        <div><dt>Coursework</dt><dd>Data Structures and Algorithms, Discrete Mathematics, Data Visualization, Applied Statistics</dd></div>
         <div><dt>Based in</dt><dd>Grand Rapids, MI · Cairo, Egypt</dd></div>
         <div><dt>Elsewhere</dt><dd><a href="https://www.linkedin.com/in/mahmoud-abdelkarim-b443b4326" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="https://github.com/MAbdelkarimEnterprise" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://www.mahmoudabdelkarim.com/resume.pdf" target="_blank" rel="noopener">Resume PDF ↗</a></dd></div>
       </dl>

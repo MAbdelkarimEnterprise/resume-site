@@ -447,14 +447,13 @@ body{background:transparent}
 .b-toned p{color:#C7BCAB}
 .b-toned .meta span{color:#E1A48A;border-color:rgba(198,107,79,.4);letter-spacing:.2em;border-radius:2px}
 .b-toned a{color:#E1A48A}
-.card.b-spira{grid-column:1/-1;min-height:0;background:radial-gradient(70% 120% at 100% 0%,rgba(46,74,114,.55),rgba(46,74,114,0) 70%),#3B2519;border-color:#3B2519;color:#FBF7F0}
+.card.b-spira{grid-column:1/-1;min-height:0;background:radial-gradient(120% 60% at 50% 30%,rgba(138,146,158,.16),transparent 60%),#1E1510;border-color:#1E1510;color:#FBF7F0}
 .b-spira h3{font-family:var(--display);font-weight:400;letter-spacing:.3em;color:#FBF7F0}
 .b-spira p{color:#EFE3CF;max-width:68ch}
 .b-spira .meta span{color:#EFE3CF;border-color:rgba(251,247,240,.28)}
 .b-spira a{color:#FBF7F0}
 .b-spira{isolation:isolate;overflow:hidden}
 .b-spira>.bg-fx~*{position:relative;z-index:1}
-.b-spira::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(59,37,25,.86) 0%,rgba(59,37,25,.5) 45%,rgba(59,37,25,0) 100%)}
 
 /* brand backdrops: generated art, kept faint behind text */
 .b-finu,.b-forge,.b-nyx,.b-toned{isolation:isolate}
@@ -668,7 +667,7 @@ html[data-theme="walnut"] .rme-ripple{background:radial-gradient(circle,rgba(201
       <a href="https://meetfinu.com" target="_blank" rel="noopener">meetfinu.com ↗</a>
     </article>
     <article class="card w-sm b-spira">
-      <div class="bg-fx spira-fx" data-spira aria-hidden="true"></div>
+      <canvas class="bg-fx spira-fx" data-spira aria-hidden="true"></canvas>
       <div class="meta"><span>Interior architecture</span><span>Live presentation</span><span>Next.js · TypeScript · Canvas</span></div>
       <h3>SPIRA</h3>
       <p><em>“Let the space make the first move.”</em></p>
@@ -1480,26 +1479,6 @@ void main() {
 })();
 </script>
 <script>
-/* SPIRA card: the same Paper grain shader as the hero, in its dots shape and SPIRA's palette. */
-(function(){
-  var el=document.querySelector('[data-spira]');if(!el||!window.mountGrain)return;
-  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches,hero;
-  /* mountGrain stores its last mount in a global the theme switch recolours; keep that pointing at the hero. */
-  document.addEventListener('grainready',function(){
-    var g=window.__grainMount;if(!g)return;
-    if(g.parentElement===el)window.__grainMount=hero;else hero=g;
-  });
-  try{
-    window.mountGrain(el,{
-      colorBack:"#3B2519",colors:["#2E4A72","#6F4A33","#171F44"],
-      softness:0.7,intensity:0.5,noise:0,
-      shape:"dots",fit:"cover",offsetX:0,offsetY:0,scale:0.2,rotation:0,
-      speed:still?0:0.6,frame:8000
-    });
-  }catch(e){}
-})();
-</script>
-<script>
 (function(){
   var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1671,6 +1650,76 @@ float snoise(vec3 v){const vec2 C=vec2(1.0/6.0,1.0/3.0);const vec4 D=vec4(0.0,0.
   if(still) draw(4000); else requestAnimationFrame(loop);
   /* RME silver click ripple */
   if(!still) document.addEventListener('click',function(e){var h=e.target.closest&&e.target.closest('button,a,[role=button],.card,.tile');if(!h)return;var s=document.createElement('span');s.className='rme-ripple';s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';document.body.appendChild(s);setTimeout(function(){s.remove()},600);});
+})();
+</script>
+<script>
+/* SPIRA card: the dotted sea from SPIRA's cover.
+   Wave Mesh by ham7a311 (21st.dev/@ham7a311/components/wave-mesh), MIT licence,
+   Copyright (c) 2026 Hamza Al-Bulushi. Licence text: /licenses/wave-mesh-MIT.txt.
+   Ported from SPIRA's adaptation to plain canvas, and flattened to fit a shallow card. */
+(function(){
+  var canvas=document.querySelector('[data-spira]'); if(!canvas) return;
+  var host=canvas.parentElement, ctx=canvas.getContext('2d'); if(!ctx) return;
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var coarse=!matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var CAM=.62, NEAR=.35, FAR=3.4, near=[228,231,235], far=[138,146,158], FEATHER=56;
+  var W=0,H=0,cols=0,rows=0,f=0,hz=0,vs=1,raf=0,visible=true,last=0,t0=performance.now();
+  var ptr={x:0,z:1.4,s:0,tx:0,tz:1.4,ts:0}, rings=[], calm=[];
+  function resize(force){
+    var w=host.clientWidth,h=host.clientHeight; if(!force&&w===W&&h===H) return;
+    W=w;H=h; var dpr=Math.min(devicePixelRatio||1,W<760?1.5:2);
+    canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
+    f=Math.max(W,H*1.2)*.55; hz=H*.2;
+    vs=(H*1.05-hz)*NEAR/(CAM*f);              /* squash depth so the nearest row lands at the card's bottom edge */
+    cols=Math.round(Math.min(150,Math.max(40,W/9)));
+    rows=Math.round(Math.min(48,Math.max(14,H/9)));
+    var box=host.getBoundingClientRect();
+    calm=[].slice.call(host.children).filter(function(el){return el!==canvas}).map(function(el){
+      var g=document.createRange();g.selectNodeContents(el);var r=g.getBoundingClientRect(); return {l:r.left-box.left-14,t:r.top-box.top-8,r:r.right-box.left+14,b:r.bottom-box.top+8};});
+  }
+  function calmAt(x,y){var k=1;for(var n=0;n<calm.length;n++){var c=calm[n],dx=Math.max(c.l-x,0,x-c.r),dy=Math.max(c.t-y,0,y-c.b),d=Math.hypot(dx,dy);
+    if(d<FEATHER){var u=d/FEATHER;k=Math.min(k,.06+.94*u*u*(3-2*u));}}return k;}
+  function height(x,z,t){
+    var y=.085*Math.sin(x*2.2+t*.7)+.07*Math.sin(z*2.9-t*.9+x*.8)+.03*Math.sin((x+z)*6.1+t*1.6);
+    if(ptr.s>.01){var d2=(x-ptr.x)*(x-ptr.x)+(z-ptr.z)*(z-ptr.z);y+=.24*ptr.s*Math.exp(-d2/.07);}
+    for(var n=0;n<rings.length;n++){var r=rings[n],age=t-r.t,d=Math.hypot(x-r.x,z-r.z),front=age*1.15;
+      y+=.2*Math.exp(-((d-front)*(d-front))/.014)*Math.exp(-age*.75);}
+    return y;
+  }
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    ptr.x+=(ptr.tx-ptr.x)*.1;ptr.z+=(ptr.tz-ptr.z)*.1;ptr.s+=(ptr.ts-ptr.s)*.06;
+    while(rings.length&&t-rings[0].t>5)rings.shift();
+    var hw=(W/2/f)*FAR*1.05;
+    for(var j=0;j<rows;j++){
+      var z=FAR*Math.pow(NEAR/FAR,j/(rows-1)),fog=Math.pow(1-(z-NEAR)/(FAR-NEAR),1.25);
+      var size=Math.max(1.4,Math.min(3.2,2.4/z)),m=Math.min(1,fog*1.6);
+      ctx.fillStyle='rgba('+Math.round(far[0]+(near[0]-far[0])*m)+','+Math.round(far[1]+(near[1]-far[1])*m)+','+Math.round(far[2]+(near[2]-far[2])*m)+','+(.3+fog*.68).toFixed(3)+')';
+      for(var i=0;i<cols;i++){
+        var x=-hw+(i/(cols-1))*hw*2,sx=W/2+(x/z)*f; if(sx<-4||sx>W+4)continue;
+        var sy=hz+((CAM-height(x,z,t))/z)*f*vs,k=calm.length?calmAt(sx,sy):1;
+        if(k<.999)ctx.globalAlpha=k; ctx.fillRect(sx-size/2,sy-size/2,size,size); if(k<.999)ctx.globalAlpha=1;
+      }
+    }
+  }
+  function now(){return (performance.now()-t0)/1000}
+  function loop(ms){ if(!visible||document.hidden){raf=0;return} raf=requestAnimationFrame(loop); if(coarse&&ms-last<30)return; last=ms; resize(); frame(now()); }
+  function wake(){ if(!reduced&&!raf&&visible&&!document.hidden) raf=requestAnimationFrame(loop); }
+  function ground(e){
+    var r=host.getBoundingClientRect(),sx=e.clientX-r.left,sy=e.clientY-r.top;
+    if(sx<0||sy<0||sx>r.width||sy>r.height||sy<=hz+2)return null;
+    var z=Math.min(FAR,Math.max(NEAR,(CAM*f*vs)/(sy-hz))); return {x:((sx-W/2)*z)/f,z:z};
+  }
+  resize(true); frame(reduced?3:0);
+  if('IntersectionObserver' in window) new IntersectionObserver(function(es){visible=es[0].isIntersecting;wake();}).observe(host);
+  if('ResizeObserver' in window) new ResizeObserver(function(){resize(true);if(reduced)frame(3);}).observe(host);
+  setTimeout(function(){resize(true);if(reduced)frame(3);},900);
+  document.addEventListener('visibilitychange',wake);
+  if(!reduced){
+    wake();
+    if(!coarse) addEventListener('pointermove',function(e){var g=ground(e);if(g){ptr.tx=g.x;ptr.tz=g.z;if(ptr.s<.05){ptr.x=g.x;ptr.z=g.z;}}ptr.ts=g?1:0;},{passive:true});
+    addEventListener('pointerdown',function(e){var g=ground(e);if(g)rings.push({x:g.x,z:g.z,t:now()});},{passive:true});
+  }
 })();
 </script>
 <script>

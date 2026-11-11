@@ -452,6 +452,9 @@ body{background:transparent}
 .b-spira p{color:#EFE3CF;max-width:68ch}
 .b-spira .meta span{color:#EFE3CF;border-color:rgba(251,247,240,.28)}
 .b-spira a{color:#FBF7F0}
+.b-spira{isolation:isolate;overflow:hidden}
+.b-spira>.bg-fx~*{position:relative;z-index:1}
+.b-spira::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(59,37,25,.86) 0%,rgba(59,37,25,.5) 45%,rgba(59,37,25,0) 100%)}
 
 /* brand backdrops: generated art, kept faint behind text */
 .b-finu,.b-forge,.b-nyx,.b-toned{isolation:isolate}
@@ -665,6 +668,7 @@ html[data-theme="walnut"] .rme-ripple{background:radial-gradient(circle,rgba(201
       <a href="https://meetfinu.com" target="_blank" rel="noopener">meetfinu.com ↗</a>
     </article>
     <article class="card w-sm b-spira">
+      <div class="bg-fx spira-fx" data-spira aria-hidden="true"></div>
       <div class="meta"><span>Interior architecture</span><span>Live presentation</span><span>Next.js · TypeScript · Canvas</span></div>
       <h3>SPIRA</h3>
       <p><em>“Let the space make the first move.”</em></p>
@@ -1471,6 +1475,26 @@ void main() {
       softness:0.76, intensity:0.45, noise:0,
       shape:"corners", fit:"contain", offsetX:0, offsetY:0, scale:1, rotation:0,
       speed: still ? 0 : 1, frame: 8000
+    });
+  }catch(e){}
+})();
+</script>
+<script>
+/* SPIRA card: the same Paper grain shader as the hero, in its dots shape and SPIRA's palette. */
+(function(){
+  var el=document.querySelector('[data-spira]');if(!el||!window.mountGrain)return;
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches,hero;
+  /* mountGrain stores its last mount in a global the theme switch recolours; keep that pointing at the hero. */
+  document.addEventListener('grainready',function(){
+    var g=window.__grainMount;if(!g)return;
+    if(g.parentElement===el)window.__grainMount=hero;else hero=g;
+  });
+  try{
+    window.mountGrain(el,{
+      colorBack:"#3B2519",colors:["#2E4A72","#6F4A33","#171F44"],
+      softness:0.7,intensity:0.5,noise:0,
+      shape:"dots",fit:"cover",offsetX:0,offsetY:0,scale:0.2,rotation:0,
+      speed:still?0:0.6,frame:8000
     });
   }catch(e){}
 })();
